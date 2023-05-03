@@ -1,0 +1,87 @@
+import styled from "styled-components";
+
+export const Container = styled.div`
+  background-color: ${(props) => props.theme.color.explorerbg};
+  width: 18vw;
+  color: rgb(225, 228, 232);
+  border-right: ${(props) => "1px solid" + props.theme.color.explorerborder};
+
+  @media screen and (min-width: 2000px) {
+    width: 10vw;
+  }
+
+  @media screen and (max-width: 900px) {
+    width: 20vw;
+  }
+
+  @media screen and (max-width: 600px) {
+    display: none;
+  }
+`;
+
+export const TitleContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 20px;
+  color: grey;
+
+  p {
+    font-weight: 300;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+  }
+`;
+
+export const Main = styled.main``;
+
+export const Heading = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 3px;
+  cursor: pointer;
+  text-transform: uppercase;
+
+  .chevron {
+    transition: transform 0.2s;
+  }
+`;
+
+export const Folder = styled.div`
+  display: flex;
+  align-items: center;
+  margin-top: 3px;
+  margin-left: 17px;
+  cursor: pointer;
+
+  .chevron {
+    transition: transform 0.2s;
+  }
+
+  p {
+    padding-left: 3px;
+    color: lightblue;
+  }
+`;
+
+export const Files = styled.div`
+  list-style: none;
+  margin-top: 5px;
+  margin-left: 27px;
+`;
+
+export const File = styled.div`
+  padding: 0.2rem 1rem;
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+
+  :hover {
+    background-color: ${(props) => props.theme.color.explorerhoverbg};
+  }
+
+  p {
+    margin-left: 5px;
+    color: rgb(134, 235, 134);
+  }
+`;

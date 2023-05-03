@@ -1,5 +1,8 @@
 import { useState } from "react";
+import { useRouter } from "next/router";
 import Image from "next/image";
+import { useDispatch, useSelector } from "react-redux";
+import { addFile } from "../../redux/features/files/filesSlice";
 
 import {
   Container,
@@ -12,39 +15,45 @@ import {
 
 import ChevronRight from "../icons/ChevronRight";
 import { FolderNotchOpen, FolderNotch } from "phosphor-react";
-
-import { useRouter } from "next/router";
+import { RootState } from "@/redux/store";
 
 const explorerItems = [
   {
-    name: "home.jsx",
+    id: 1,
+    icon: "/images/react_icon.svg",
+    filename: "home.jsx",
     path: "/",
-    icon: "react_icon.svg",
   },
   {
-    name: "about.html",
+    id: 2,
+    icon: "/images/html_icon.svg",
+    filename: "about.html",
     path: "/about",
-    icon: "html_icon.svg",
   },
   {
-    name: "contact.yml",
+    id: 3,
+    icon: "/images/yml_icon.svg",
+    filename: "contact.yml",
     path: "/contact",
-    icon: "yml_icon.svg",
   },
   {
-    name: "projects.py",
+    id: 4,
+    icon: "/images/py_icon.svg",
+    filename: "projects.py",
     path: "/projects",
-    icon: "py_icon.svg",
   },
   {
-    name: "github.md",
+    id: 5,
+    icon: "/images/markdown_icon.svg",
+    filename: "github.md",
     path: "/github",
-    icon: "markdown_icon.svg",
   },
 ];
-
 const Explorer = () => {
   const router = useRouter();
+  const dispatch = useDispatch();
+  const getfiles = useSelector((state: RootState) => state.files.value);
+
   const [portfolioIsOpen, setPortfolioIsOpen] = useState(true);
   const [isFolderOpen, setIsFolderOpen] = useState(true);
 
@@ -88,14 +97,20 @@ const Explorer = () => {
           style={isFolderOpen ? { display: "block" } : { display: "none" }}
         >
           {explorerItems.map((item) => (
-            <File onClick={() => router.push(item.path)} key={item.name}>
+            <File
+              key={item.filename}
+              onClick={() => {
+                getfiles.includes(item) ? null : dispatch(addFile(item));
+                router.push(item.path);
+              }}
+            >
               <Image
-                src={`/images/${item.icon}`}
-                alt={item.name}
+                src={`${item.icon}`}
+                alt={item.filename}
                 height={18}
                 width={18}
               />{" "}
-              <p>{item.name}</p>
+              <p>{item.filename}</p>
             </File>
           ))}
         </Files>

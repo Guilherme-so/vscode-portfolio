@@ -27,8 +27,8 @@ function Sidebar() {
       </Top>
       <Bottom>
         {sidebarBottomItems.map(({ Icon, path }) => (
-          <IconContainer>
-            <Link href={path} key={path}>
+          <IconContainer key={path}>
+            <Link href={path}>
               <Icon
                 className="icon"
                 fill={

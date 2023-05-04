@@ -4,7 +4,7 @@ const GlobalStyle = createGlobalStyle`
   body {
     margin: 0;
     padding: 0;
-    /* background: purple; */
+    user-select: none;
     font-family: "Monaco", "Menlo", monospace;
     font-size: 14px;
   }

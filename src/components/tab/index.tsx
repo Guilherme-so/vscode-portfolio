@@ -1,8 +1,8 @@
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { TabContainer } from "./styles";
-import { useDispatch } from 'react-redux'
-import {deleteFile} from "../../redux/features/files/filesSlice"
+import { useDispatch } from "react-redux";
+import { deleteFile } from "../../redux/features/files/filesSlice";
 
 type ITab = {
   id: number;
@@ -12,11 +12,13 @@ type ITab = {
 };
 
 const Tab = ({ id, icon, filename, path }: ITab) => {
-  const router = useRouter();
   const dispatch = useDispatch();
+  const router = useRouter();
+
+  const isActive = router.pathname == path ? true : false;
 
   return (
-    <TabContainer onClick={() => router.push(path)}>
+    <TabContainer active={isActive} onClick={() => router.push(path)}>
       <Image src={icon} alt={filename} height={18} width={18} />
       <p>{filename}</p>
       <span
@@ -25,7 +27,7 @@ const Tab = ({ id, icon, filename, path }: ITab) => {
           dispatch(deleteFile(id));
         }}
       >
-        x
+        X
       </span>
     </TabContainer>
   );

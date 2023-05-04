@@ -10,25 +10,32 @@ const tabs = [
 
   {
     id: 2,
-    icon: "/images/html_icon.svg",
+    icon: "/images/react_icon.svg",
+
+    // icon: "/images/html_icon.svg",
     filename: "about.html",
     path: "/about",
   },
   {
     id: 3,
-    icon: "/images/yml_icon.svg",
+    icon: "/images/react_icon.svg",
+
+    // icon: "/images/yml_icon.svg",
     filename: "contact.yml",
     path: "/contact",
   },
   {
     id: 4,
-    icon: "/images/py_icon.svg",
+    icon: "/images/react_icon.svg",
+
+    // icon: "/images/py_icon.svg",
     filename: "projects.py",
     path: "/projects",
   },
   {
     id: 5,
-    icon: "/images/markdown_icon.svg",
+    icon: "/images/react_icon.svg",
+    // icon: "/images/markdown_icon.svg",
     filename: "github.md",
     path: "/github",
   },
@@ -52,7 +59,12 @@ export const filesSlice = createSlice({
       );
     },
     addFile: (state, action) => {
+      const itemExist = state.value.find(
+        (item: any) => item.id === action.payload.id
+      );
+      if (!itemExist) {
         state.value.push(action.payload);
+      }
     },
   },
 });

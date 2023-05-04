@@ -1,9 +1,9 @@
 import React from "react";
 import Topbar from "../topbar";
 import Sidebar from "../sidebar";
-import Explorer from "../explorer";
 import BottomBar from "../bottomBar";
 import TabBar from "../tabBar";
+import Explorer from "../explorer";
 
 type ILayout = {
   children: React.ReactNode;
@@ -13,12 +13,12 @@ function Layout({ children }: ILayout) {
   return (
     <>
       <Topbar />
-      <main style={{ display: "flex" }}>
+      <main style={{ display: "flex",overflow: 'hidden' }}>
         <Sidebar />
         <Explorer />
         <div
           style={{
-            backgroundColor: "grey",
+            zIndex: '4',
             flex: 1,
             height: "calc(100vh - 30px - 25px)",
           }}

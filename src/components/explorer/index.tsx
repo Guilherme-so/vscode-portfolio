@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 import { useDispatch, useSelector } from "react-redux";
@@ -26,41 +26,88 @@ const explorerItems = [
   },
   {
     id: 2,
-    icon: "/images/html_icon.svg",
+    icon: "/images/react_icon.svg",
+
+    // icon: "/images/html_icon.svg",
     filename: "about.html",
     path: "/about",
   },
   {
     id: 3,
-    icon: "/images/yml_icon.svg",
+    icon: "/images/react_icon.svg",
+    // icon: "/images/yml_icon.svg",
     filename: "contact.yml",
     path: "/contact",
   },
   {
     id: 4,
-    icon: "/images/py_icon.svg",
+    icon: "/images/react_icon.svg",
+
+    // icon: "/images/py_icon.svg",
     filename: "projects.py",
     path: "/projects",
   },
   {
     id: 5,
-    icon: "/images/markdown_icon.svg",
+    icon: "/images/react_icon.svg",
+
+    // icon: "/images/markdown_icon.svg",
     filename: "github.md",
     path: "/github",
   },
 ];
+
 const Explorer = () => {
   const router = useRouter();
   const dispatch = useDispatch();
   const getfiles = useSelector((state: RootState) => state.files.value);
-
   const [portfolioIsOpen, setPortfolioIsOpen] = useState(true);
   const [isFolderOpen, setIsFolderOpen] = useState(true);
 
+  // resizeble
+  const sidebarRef = useRef<HTMLInputElement>(null);
+  const [isResizing, setIsResizing] = useState(false);
+  const [sidebarWidth, setSidebarWidth] = useState(192);
+
+  const startResizing = useCallback(() => {
+    setIsResizing(true);
+  }, []);
+
+  const stopResizing = useCallback(() => {
+    setIsResizing(false);
+  }, []);
+
+  const resize = useCallback(
+    (mouseMoveEvent: MouseEvent) => {
+      if (isResizing) {
+        setSidebarWidth(
+          mouseMoveEvent.clientX -
+            sidebarRef.current!.getBoundingClientRect().left
+        );
+      }
+    },
+    [isResizing]
+  );
+
+  useEffect(() => {
+    window.addEventListener("mousemove", resize);
+    window.addEventListener("mouseup", stopResizing);
+    return () => {
+      window.removeEventListener("mousemove", resize);
+      window.removeEventListener("mouseup", stopResizing);
+    };
+  }, [resize, stopResizing]);
+
   return (
-    <Container>
+    <Container
+      ref={sidebarRef}
+      style={{ width: sidebarWidth }}
+      onMouseDown={(e) => e.preventDefault()}
+    >
+      <div className="resizer" onMouseDown={startResizing}></div>
+
       <TitleContainer>
-        <p>Explorer</p> <span>...</span>
+        <p>Explorer</p> {sidebarWidth > 120 && <span>...</span>}
       </TitleContainer>
 
       <div>
@@ -74,7 +121,7 @@ const Explorer = () => {
             className="chevron"
             style={portfolioIsOpen ? { transform: "rotate(90deg)" } : {}}
           />
-          Portfolio
+          <p>Portfolio</p>
         </Heading>
 
         <Folder
@@ -118,5 +165,4 @@ const Explorer = () => {
     </Container>
   );
 };
-
 export default Explorer;

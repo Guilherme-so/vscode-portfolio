@@ -6,7 +6,6 @@ export const Container = styled.aside`
   flex-direction: column;
   justify-content: space-between;
   width: 4.5vw;
-  min-width: 40px;
   height: calc(100vh - 30px - 25px);
 
   @media screen and (min-width: 2000px) {

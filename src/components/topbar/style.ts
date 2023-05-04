@@ -5,9 +5,10 @@ export const TopBar = styled.nav`
   justify-content: space-between;
   background-color: ${(props) => props.theme.color.mainbg};
   color: ${(props) => props.theme.color.textcolor};
-  height: 22px;
+  height: 30px;
   align-items: center;
   position: relative;
+  padding: auto;
 
   p {
     position: absolute;

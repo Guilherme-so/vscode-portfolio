@@ -43,10 +43,12 @@ const tabs = [
 
 export interface FilesState {
   value: any;
+  size: number
 }
 
 const initialState: FilesState = {
   value: tabs,
+  size: 192
 };
 
 export const filesSlice = createSlice({
@@ -66,8 +68,11 @@ export const filesSlice = createSlice({
         state.value.push(action.payload);
       }
     },
+    setSidebarWidth: (state, action) => {
+      state.size = action.payload
+    }
   },
 });
 
-export const { deleteFile, addFile } = filesSlice.actions;
+export const { deleteFile, addFile,setSidebarWidth } = filesSlice.actions;
 export default filesSlice.reducer;

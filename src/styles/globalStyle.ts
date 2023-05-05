@@ -7,6 +7,7 @@ const GlobalStyle = createGlobalStyle`
     user-select: none;
     font-family: "Monaco", "Menlo", monospace;
     font-size: 14px;
+    overflow: hidden;
   }
 
   * {

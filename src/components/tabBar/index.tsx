@@ -7,8 +7,14 @@ import { Tabs } from "./syles";
 
 function TabBar() {
   const files = useSelector((state: RootState) => state.files.value);
+  const sidebarWidth = useSelector((state: RootState) => state.files.size);
+
   return (
-    <Tabs>
+    <Tabs size={sidebarWidth}
+    // style={{
+    //   width: `calc(100vw - ${sidebarWidth}px - 70px)`,
+    // }}
+    >
       {files.map((tab: any) => (
         <Tab
           id={tab.id}

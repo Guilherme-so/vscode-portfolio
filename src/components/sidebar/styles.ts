@@ -20,7 +20,7 @@ export const Container = styled.aside`
   }
 
   @media screen and (max-width: 600px) {
-    width: 10vw;
+    width: 40px;
   }
 `;
 
@@ -37,7 +37,7 @@ export const IconContainer = styled.div<{ active?: boolean }>`
   }
 
   border-left: ${({ theme, active }) =>
-    active == true ? "2px solid" + theme.color.accentcolor : "none"};
+    active == true ? "2px solid rgb(59, 153, 197)" : "none"};
 
   .icon {
     height: 48px;

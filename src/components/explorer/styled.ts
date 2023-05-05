@@ -34,7 +34,7 @@ export const Container = styled.div`
     width: 20vw;
   }
 
-  @media screen and (max-width: 600px) {
+  @media screen and (max-width: 700px) {
     display: none;
   }
 `;
@@ -117,7 +117,7 @@ export const File = styled.div`
 
   p {
     margin-left: 5px;
-    color: rgb(134, 235, 134);
+    color: rgb(59, 153, 197);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

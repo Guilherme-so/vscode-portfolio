@@ -1,8 +1,12 @@
 import { useEffect, useRef, useState, useCallback } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
+import { RootState } from "@/redux/store";
 import { useDispatch, useSelector } from "react-redux";
-import { addFile } from "../../redux/features/files/filesSlice";
+import {
+  addFile,
+  setSidebarWidth,
+} from "../../redux/features/files/filesSlice";
 
 import {
   Container,
@@ -15,7 +19,6 @@ import {
 
 import ChevronRight from "../icons/ChevronRight";
 import { FolderNotchOpen, FolderNotch } from "phosphor-react";
-import { RootState } from "@/redux/store";
 
 const explorerItems = [
   {
@@ -67,7 +70,8 @@ const Explorer = () => {
   // resizeble
   const sidebarRef = useRef<HTMLInputElement>(null);
   const [isResizing, setIsResizing] = useState(false);
-  const [sidebarWidth, setSidebarWidth] = useState(192);
+  // const [sidebarWidth, setSidebarWidth] = useState(192);
+  const sidebarWidth = useSelector((state: RootState) => state.files.size);
 
   const startResizing = useCallback(() => {
     setIsResizing(true);
@@ -80,9 +84,11 @@ const Explorer = () => {
   const resize = useCallback(
     (mouseMoveEvent: MouseEvent) => {
       if (isResizing) {
-        setSidebarWidth(
-          mouseMoveEvent.clientX -
-            sidebarRef.current!.getBoundingClientRect().left
+        dispatch(
+          setSidebarWidth(
+            mouseMoveEvent.clientX -
+              sidebarRef.current!.getBoundingClientRect().left
+          )
         );
       }
     },

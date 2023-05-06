@@ -19,11 +19,13 @@
     "phosphor-react": "^1.4.1",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-pdf": "^6.2.2",
     "react-redux": "^8.0.5",
     "styled-components": "^5.3.10",
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@types/react-pdf": "^6.2.0",
     "@types/react-resizable": "^3.0.4",
     "@types/styled-components": "^5.1.26"
   }

@@ -16,7 +16,9 @@ function Layout({ children }: ILayout) {
     <>
       <Topbar />
 
-      <main style={{ display: "flex", overflow: "hidden" }}>
+      <main 
+      style={{ display: "flex", overflow: "hidden" }}
+      >
         <Sidebar />
         <Explorer />
 
@@ -24,7 +26,7 @@ function Layout({ children }: ILayout) {
           style={{
             zIndex: "4",
             flex: 1,
-            height: "calc(100vh - 30px - 33px)",
+            height: "calc(100vh - 30px - 25px)",
           }}
         >
           <TabBar />

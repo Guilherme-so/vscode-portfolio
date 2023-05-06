@@ -1,48 +1,9 @@
+import { tabs } from "@/components/helper/constants";
 import { createSlice } from "@reduxjs/toolkit";
-
-const tabs = [
-  {
-    id: 1,
-    icon: "/images/react_icon.svg",
-    filename: "home.jsx",
-    path: "/",
-  },
-
-  {
-    id: 2,
-    icon: "/images/react_icon.svg",
-
-    // icon: "/images/html_icon.svg",
-    filename: "about.html",
-    path: "/about",
-  },
-  {
-    id: 3,
-    icon: "/images/react_icon.svg",
-
-    // icon: "/images/yml_icon.svg",
-    filename: "contact.yml",
-    path: "/contact",
-  },
-  {
-    id: 4,
-    icon: "/images/react_icon.svg",
-
-    // icon: "/images/py_icon.svg",
-    filename: "projects.py",
-    path: "/projects",
-  },
-  {
-    id: 5,
-    icon: "/images/react_icon.svg",
-    // icon: "/images/markdown_icon.svg",
-    filename: "github.md",
-    path: "/github",
-  },
-];
+import Tab from "./interface"
 
 export interface FilesState {
-  value: any;
+  value: Tab[];
   size: number
 }
 

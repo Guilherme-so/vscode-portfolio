@@ -10,6 +10,13 @@ export const About = styled.div<{ size: number }>`
   color: #fff;
   z-index: 1;
 
+  .line::before {
+    content: counter(line);
+    counter-increment: line;
+    margin-right: 1rem;
+    color: grey;
+  }
+
   ::-webkit-scrollbar {
     width: 8px;
     height: 8px;

@@ -2,7 +2,7 @@ import React from "react";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import { Container, Top, Bottom, IconContainer } from "./styles";
-import { sidebarBottomItems, sidebarTopItems } from "./json";
+import { sidebarBottomItems, sidebarTopItems } from "../helper/constants";
 
 function Sidebar() {
   const router = useRouter();

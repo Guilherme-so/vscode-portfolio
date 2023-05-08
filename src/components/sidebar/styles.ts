@@ -1,7 +1,9 @@
 import styled from "styled-components";
 
 export const Container = styled.aside`
-  background-color: ${(props) => props.theme.color.mainbg};
+  background-color: ${(props) => props.theme.color.sidebarbg};
+  border-right: 1px solid ${(props) => props.theme.color.sidebardBorderRight};
+
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -28,16 +30,15 @@ export const Top = styled.div``;
 
 export const Bottom = styled.div``;
 
-export const IconContainer = styled.div<{ active?: boolean }>`
+export const IconContainer = styled.div<{
+  active?: boolean;
+  activeBotton?: boolean;
+}>`
   cursor: pointer;
   width: 100%;
 
-  :hover {
-    background-color: ${(props) => props.theme.color.sidebarhoverbg};
-  }
-
   border-left: ${({ theme, active }) =>
-    active == true ? "2px solid rgb(59, 153, 197)" : "none"};
+    active == true ? `2px solid ${theme.color.sidebarBorderLeft}` : "none"};
 
   .icon {
     height: 48px;
@@ -45,6 +46,16 @@ export const IconContainer = styled.div<{ active?: boolean }>`
     padding: 0.65rem 0;
     display: block;
     margin: 0 auto;
+    fill: ${({ theme, active, activeBotton }) =>
+      active == true
+        ? theme.color.sidebarIconActive
+        : activeBotton == true
+        ? theme.color.sidebarIconActive
+        : theme.color.sidebarIcon};
+
+    :hover {
+      fill: ${({ theme }) => theme.color.sidebarIconActive};
+    }
   }
 
   @media screen and (max-width: 900px) {

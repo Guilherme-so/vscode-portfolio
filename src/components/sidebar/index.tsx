@@ -13,30 +13,16 @@ function Sidebar() {
         {sidebarTopItems.map(({ Icon, path }) => (
           <Link href={path} key={path}>
             <IconContainer active={router.pathname === path ? true : false}>
-              <Icon
-                className="icon"
-                fill={
-                  router.pathname === path
-                    ? "rgb(225, 228, 232)"
-                    : "rgb(106, 115, 125)"
-                }
-              />
+              <Icon className="icon" />
             </IconContainer>
           </Link>
         ))}
       </Top>
       <Bottom>
         {sidebarBottomItems.map(({ Icon, path }) => (
-          <IconContainer key={path}>
+          <IconContainer key={path} activeBotton={router.pathname === path ? true : false}>
             <Link href={path}>
-              <Icon
-                className="icon"
-                fill={
-                  router.pathname === path
-                    ? "rgb(225, 228, 232)"
-                    : "rgb(106, 115, 125)"
-                }
-              />
+              <Icon className="icon" />
             </Link>
           </IconContainer>
         ))}

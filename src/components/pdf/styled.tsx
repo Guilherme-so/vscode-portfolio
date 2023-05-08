@@ -8,7 +8,7 @@ export const ButtonsWrapper = styled.div`
 
 export const Button = styled.button<{ disabled: any }>`
   width: 80px;
-  background-color: rgb(30, 138, 189);
+  background-color: ${(props)=> props.theme.color.themeMainColor};
   color: #fff;
   border: none;
   padding: 4px 0px;

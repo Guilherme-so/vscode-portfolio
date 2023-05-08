@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-  background: rgb(30, 138, 189);
+  background: ${(props)=> props.theme.color.themeMainColor};
   display: flex;
   flex-direction: column;
   border-radius: 20px;
@@ -25,7 +25,7 @@ export const Container = styled.div`
 
   .imgWrapper::before {
     content: "";
-    background-color: rgb(30, 138, 189);
+    background-color: ${(props)=> props.theme.color.themeMainColor};
     position: absolute;
     border-top-right-radius: 20px;
     border-top-left-radius: 20px;

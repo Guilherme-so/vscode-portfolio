@@ -134,7 +134,7 @@ export const contactItems = [
   {
     social: "Website",
     link: "My website",
-    href: "https://",
+    href: "https://vscode-portfolio-theta.vercel.app/",
   },
 ];
 

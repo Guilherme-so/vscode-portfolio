@@ -3,12 +3,16 @@ const nextConfig = {
   reactStrictMode: true,
   compiler: {
     // Enables the styled-components SWC transform
-    styledComponents: true
+    styledComponents: true,
   },
   images: {
-    domains: ["github.com", ],
+    domains: ["github.com"],
   },
-}
+  i18n: {
+    locales: ["en-US","pt-BR"],
+    defaultLocale: "en-US",
+    localeDetection: false
+  },
+};
 
-
-module.exports = nextConfig
+module.exports = nextConfig;

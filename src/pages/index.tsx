@@ -1,3 +1,4 @@
+import { useEffect } from "react";
 import { useRouter } from "next/router";
 import Image from "next/image";
 
@@ -16,65 +17,69 @@ import {
   Right,
   Tags,
 } from "@/styles/Home";
+import { enUS, ptBR } from "@/components/helper/internationalization";
+import Head from "@/components/helper/head";
 
 export default function HomePage() {
   const router = useRouter();
+
   const sidebarWidth = useSelector((state: RootState) => state.files.size);
+  const { locale } = useSelector((state: RootState) => state.language.value);
+
+  useEffect(() => {
+    switch (locale) {
+      case "pt-BR":
+        router.push("/", "/", { locale: "pt-BR" });
+        break;
+      case "en-US":
+        router.push("/", "/", { locale: "en-US" });
+        break;
+    }
+  }, [locale]);
+
+  const translate = locale == "pt-BR" ? ptBR : enUS;
 
   return (
     <>
+    <Head title="Home" />
       <Container size={sidebarWidth}>
         <Foreground size={sidebarWidth}>
           <Content>
             <h1 className="name">Guilherme Silva</h1>
-            <h6 className="bio">Frontend and Mobile developer</h6>
+            <h6 className="bio">{translate.homePage.bio}</h6>
             <CardContainer>
               <Card>
                 <Content>
-                  <h4>Skill Set</h4>
+                  <h4>Skills</h4>
                   <Tags>
-                    <span key="Research" className="Research">
-                      Research
-                    </span>
-                    <span key="PyTorch" className="PyTorch">
-                      PyTorch
-                    </span>
-                    <span key="Tensorflow" className="Tensorflow">
-                      Tensorflow
-                    </span>
-                    <span key="Apache-Spark" className="Apache-Spark">
-                      Apache-Spark
-                    </span>
-                    <span key="SQL" className="SQL">
-                      SQL
-                    </span>
-                    <span key="Computer-Vision" className="Computer-Vision">
-                      Computer-Vision
-                    </span>
-                    <span key="Data-Pipelines" className="Data-Pipelines">
-                      Data-Pipelines
-                    </span>
-                    <span key="MLOps" className="MLOps">
-                      MLOps
-                    </span>
-                    <span key="Software-Design" className="Software-Design">
-                      Software-Design
-                    </span>
-                    <span key="Bots" className="Bots">
-                      Bots
-                    </span>
-                    <span key="APIs" className="APIs">
-                      APIs
-                    </span>
+                    <span>HTML</span>
+                    <span>CSS</span>
+                    <span>Javascript</span>
+                    <span>Typescript</span>
+                    <span>ReactJS</span>
+                    <span>NextJS</span>
+                    <span>Redux</span>
+                    <span>Redux-Toolkit</span>
+                    <span>NodeJS</span>
+                    <span>ExpressJS</span>
+                    <span>APIs</span>
+                    <span>MongoDB</span>
+                    <span>SQL</span>
+                    <span>Postgres</span>
+                    <span>Prisma</span>
+                    <span>Dart</span>
+                    <span>Flutter</span>
                   </Tags>
                 </Content>
               </Card>
             </CardContainer>
 
             <ButtonsWrapper>
-              <Button onClick={() => router.push("/about")}>About Me</Button>
+              <Button onClick={() => router.push("/about")}>
+                {translate.homePage.firstButton}
+              </Button>
               <Outlined onClick={() => router.push("/contact")}>
-                Contact
+                {translate.homePage.secondButton}
               </Outlined>
             </ButtonsWrapper>
           </Content>

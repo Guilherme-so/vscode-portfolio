@@ -1,24 +1,26 @@
 import styled from "styled-components";
 
 export const TabContainer = styled.div<{ active: boolean }>`
-  padding: 0.5rem 10px 0.5rem 1.25rem;
-  background-color: ${(props) => props.theme.color.tabbg};
-  color: rgb(30, 138, 189);
   display: flex;
   align-items: center;
-  border: 1px solid ${(props) => props.theme.color.tabborder};
+  padding: 0.5rem 10px 0.5rem 1.25rem;
   font-family: "Source Sans Pro", sans-serif;
   font-size: 0.9rem;
   cursor: pointer;
 
-  border-top: ${({ active, theme }) =>
-    active ? '1.8px solid rgb(30, 138, 189)'  : "none"};
+  background-color: ${({ active, theme }) =>
+    active ? theme.color.tabactivebg : theme.color.tabbg};
 
-  background: ${(props) => props.theme.color.tabactivebg};
+  color: rgb(30, 138, 189);
+  border: 1px solid ${(props) => props.theme.color.tabborder};
+  border-top: ${({ active, theme }) =>
+    active ? `1px solid ${theme.color.sidebarBorderLeft}` : "none"};
+
   border-bottom: none;
 
   p {
     margin-left: 5px;
+    color:  ${(props) => props.theme.color.tabColor};
   }
 
   span {

@@ -15,7 +15,7 @@ export const ListOne = styled.ul`
   font-size: 14px;
 
   li:nth-child(1) {
-    background-color: rgb(189, 147, 249);
+    background-color: ${(props) => props.theme.color.themeMainColor};
     position: relative;
     color: #000;
     width: 37px;

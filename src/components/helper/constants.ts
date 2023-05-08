@@ -39,7 +39,7 @@ export const tabs = [
   {
     id: 1,
     icon: "/images/react_icon.svg",
-    filename: "home.jsx",
+    filename: "home.tsx",
     path: "/",
   },
 
@@ -48,7 +48,7 @@ export const tabs = [
     icon: "/images/react_icon.svg",
 
     // icon: "/images/html_icon.svg",
-    filename: "about.html",
+    filename: "about.tsx",
     path: "/about",
   },
   {
@@ -56,7 +56,7 @@ export const tabs = [
     icon: "/images/react_icon.svg",
 
     // icon: "/images/yml_icon.svg",
-    filename: "contact.yml",
+    filename: "contact.tsx",
     path: "/contact",
   },
   {
@@ -64,13 +64,13 @@ export const tabs = [
     icon: "/images/react_icon.svg",
 
     // icon: "/images/py_icon.svg",
-    filename: "projects.py",
+    filename: "projects.tsx",
     path: "/projects",
   },
   {
     id: 5,
-    icon: "/images/react_icon.svg",
-    // icon: "/images/markdown_icon.svg",
+    // icon: "/images/react_icon.svg",
+    icon: "/images/markdown_icon.svg",
     filename: "github.md",
     path: "/github",
   },
@@ -80,7 +80,7 @@ export const explorerItems = [
   {
     id: 1,
     icon: "/images/react_icon.svg",
-    filename: "home.jsx",
+    filename: "home.tsx",
     path: "/",
   },
   {
@@ -88,14 +88,14 @@ export const explorerItems = [
     icon: "/images/react_icon.svg",
 
     // icon: "/images/html_icon.svg",
-    filename: "about.html",
+    filename: "about.tsx",
     path: "/about",
   },
   {
     id: 3,
     icon: "/images/react_icon.svg",
     // icon: "/images/yml_icon.svg",
-    filename: "contact.yml",
+    filename: "contact.tsx",
     path: "/contact",
   },
   {
@@ -103,14 +103,13 @@ export const explorerItems = [
     icon: "/images/react_icon.svg",
 
     // icon: "/images/py_icon.svg",
-    filename: "projects.py",
+    filename: "projects.tsx",
     path: "/projects",
   },
   {
     id: 5,
-    icon: "/images/react_icon.svg",
-
-    // icon: "/images/markdown_icon.svg",
+    // icon: "/images/react_icon.svg",
+    icon: "/images/markdown_icon.svg",
     filename: "github.md",
     path: "/github",
   },
@@ -134,8 +133,8 @@ export const contactItems = [
   },
   {
     social: "Website",
-    link: "gkos.tech",
-    href: "https://gkos.tech",
+    link: "My website",
+    href: "https://",
   },
 ];
 

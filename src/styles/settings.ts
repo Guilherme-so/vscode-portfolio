@@ -8,11 +8,14 @@ export const Container = styled.div`
   }
 `;
 
+export const Language = styled.div`
+  padding: 1.5rem 20px 40px 30px;
+`;
+
 export const ImageContainer = styled.div`
   display: flex;
   gap: 30px;
   padding: 1.5rem 20px 20px 20px;
-
 `;
 
 export const Card = styled.div`
@@ -20,17 +23,17 @@ export const Card = styled.div`
   flex-direction: column;
   align-items: center;
 
-  h3{
+  h3 {
     color: #fff;
     margin-top: 5px;
     margin-bottom: 3px;
   }
-  h4{
+  h4 {
     color: #fff;
     margin-bottom: 5px;
   }
 
-  button{
+  button {
     padding: 3px 5px;
     cursor: pointer;
   }

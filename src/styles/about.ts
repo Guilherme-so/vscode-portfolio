@@ -33,11 +33,11 @@ export const About = styled.div<{ size: number }>`
 
   /* Handle on hover */
   ::-webkit-scrollbar-thumb:hover {
-    background: rgb(30, 138, 189);
+    background:  ${(props)=> props.theme.color.themeMainColor};
   }
 
   a {
-    color: rgb(30, 138, 189);
+    color: ${(props)=> props.theme.color.themeMainColor};
   }
 
   li {

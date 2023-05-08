@@ -15,7 +15,7 @@ export const Container = styled.div`
   }
 
   a {
-    color: rgb(30, 138, 189);
+    color: ${(props)=> props.theme.color.themeMainColor};
     text-decoration: none;
   }
 

@@ -2,8 +2,8 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   background-color: ${(props) => props.theme.color.explorerbg};
-  color: rgb(225, 228, 232);
-  border-right: ${(props) => "1px solid" + props.theme.color.explorerborder};
+  color: #c0c4d8;
+  border-right:1px solid ${(props) => props.theme.color.explorerborder};
   width: 18vw;
   position: relative;
   flex-grow: 0;
@@ -18,7 +18,6 @@ export const Container = styled.div`
     right: 0;
     cursor: col-resize;
     height: 100%;
-    background-color: black;
 
     :hover {
       width: 4px;
@@ -117,7 +116,7 @@ export const File = styled.div`
 
   p {
     margin-left: 5px;
-    color: rgb(59, 153, 197);
+    color: #69c3ff;
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

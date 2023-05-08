@@ -137,7 +137,7 @@ export const Content = styled.div`
     ::after {
       margin-left: 0.4rem;
       width: 0.125em;
-      background: rgb(59, 153, 197);
+      background: ${(props)=> props.theme.color.themeMainColor};
       animation: typewriter 2.5s steps(24) 500ms forwards,
         blink 750ms steps(24) infinite;
     }
@@ -281,7 +281,7 @@ export const ButtonsWrapper = styled.div`
 `;
 
 export const Button = styled.div`
-  background: rgb(30, 138, 189);
+  background: ${(props)=> props.theme.color.themeMainColor};
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
   margin-right: 1.5rem;
@@ -307,7 +307,7 @@ export const Outlined = styled.div`
   font-size: 1.25rem;
   padding: 0.5rem 1rem;
   color: #eee;
-  border: 2px solid rgb(30, 138, 189);
+  border: 2px solid ${(props)=> props.theme.color.themeMainColor};
   background: transparent;
   cursor: pointer;
 
@@ -333,7 +333,7 @@ export const Right = styled.div`
 `;
 
 export const PictureBoader = styled.div`
-  border: 6px solid rgb(30, 138, 189);
+  border: 6px solid ${(props)=> props.theme.color.themeMainColor};
   border-radius: 250px;
   object-fit: cover;
   overflow: hidden;

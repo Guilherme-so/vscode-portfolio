@@ -1,9 +1,9 @@
+import { useRouter } from "next/router";
 import Image from "next/image";
 
 import { RootState } from "@/redux/store";
 import { useSelector } from "react-redux";
 import {
-  Background,
   Button,
   ButtonsWrapper,
   Card,
@@ -16,7 +16,6 @@ import {
   Right,
   Tags,
 } from "@/styles/Home";
-import { useRouter } from "next/router";
 
 export default function HomePage() {
   const router = useRouter();
@@ -24,18 +23,8 @@ export default function HomePage() {
 
   return (
     <>
-      <Container
-        // style={{
-        //   width: `calc(100vw - ${sidebarWidth}px)`,
-        // }}
-        size={sidebarWidth}
-      >
-        <Foreground
-          size={sidebarWidth}
-          // style={{
-          //   width: `calc(100vw - ${sidebarWidth}px - 100px)`,
-          // }}
-        >
+      <Container size={sidebarWidth}>
+        <Foreground size={sidebarWidth}>
           <Content>
             <h1 className="name">Guilherme Silva</h1>
             <h6 className="bio">Frontend and Mobile developer</h6>

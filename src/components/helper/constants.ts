@@ -171,3 +171,16 @@ export const projects = [
     link: "https://guess-my-number-dom.vercel.app/",
   },
 ];
+
+export const flags = [
+  {
+    locale:"pt-BR", 
+    label: "PT",
+    img: "/flags/brasil-flag.png" 
+  },
+  {
+    locale:"en-US", 
+    label: "EN",
+    img: "/flags/United-States.png",
+  },
+]

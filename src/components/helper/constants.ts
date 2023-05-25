@@ -5,6 +5,19 @@ import MailIcon from "../icons/MailIcon";
 import AccountIcon from "../icons/AccountIcon";
 import SettingsIcon from "../icons/SettingsIcon";
 
+export const flags = [
+  {
+    locale: "pt-BR",
+    label: "PT",
+    img: "/flags/brasil-flag.png",
+  },
+  {
+    locale: "en-US",
+    label: "EN",
+    img: "/flags/United-States.png",
+  },
+];
+
 export const sidebarTopItems = [
   {
     Icon: FilesIcon,
@@ -46,7 +59,6 @@ export const tabs = [
   {
     id: 2,
     icon: "/images/react_icon.svg",
-
     // icon: "/images/html_icon.svg",
     filename: "about.tsx",
     path: "/about",
@@ -54,7 +66,6 @@ export const tabs = [
   {
     id: 3,
     icon: "/images/react_icon.svg",
-
     // icon: "/images/yml_icon.svg",
     filename: "contact.tsx",
     path: "/contact",
@@ -62,7 +73,6 @@ export const tabs = [
   {
     id: 4,
     icon: "/images/react_icon.svg",
-
     // icon: "/images/py_icon.svg",
     filename: "projects.tsx",
     path: "/projects",
@@ -86,7 +96,6 @@ export const explorerItems = [
   {
     id: 2,
     icon: "/images/react_icon.svg",
-
     // icon: "/images/html_icon.svg",
     filename: "about.tsx",
     path: "/about",
@@ -101,7 +110,6 @@ export const explorerItems = [
   {
     id: 4,
     icon: "/images/react_icon.svg",
-
     // icon: "/images/py_icon.svg",
     filename: "projects.tsx",
     path: "/projects",
@@ -140,6 +148,18 @@ export const contactItems = [
 
 export const projects = [
   {
+    title: "Ecommerce Website",
+    description: "Ecommerce website com modo de pagamento",
+    img: "/images/ecommerce.png",
+    link: "https://ecommerce-ezdl.vercel.app/",
+  },
+  {
+    title: "Vscode Portfolio",
+    description: "Portfolio basiado no Visual studio Code",
+    img: "/images/vscode-portfolio.png",
+    link: "https://vscode-portfolio-theta.vercel.app/",
+  },
+  {
     title: "Campanha Animal",
     description: "Website para Ong de animais.",
     img: "/images/campanhaAnimal.png",
@@ -164,23 +184,4 @@ export const projects = [
     img: "/images/mobanime.png",
     link: "https://mobanime.vercel.app/",
   },
-  {
-    title: "Adivinhe Meu Numero",
-    description: "Um simples jogo em vanilla js.",
-    img: "/images/guess-mynumber.png",
-    link: "https://guess-my-number-dom.vercel.app/",
-  },
 ];
-
-export const flags = [
-  {
-    locale:"pt-BR", 
-    label: "PT",
-    img: "/flags/brasil-flag.png" 
-  },
-  {
-    locale:"en-US", 
-    label: "EN",
-    img: "/flags/United-States.png",
-  },
-]

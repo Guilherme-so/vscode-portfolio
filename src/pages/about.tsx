@@ -5,6 +5,8 @@ import { RootState } from "@/redux/store";
 import SinglePage from "@/components/pdf/singlePagePDF";
 
 const Resume = "/images/resume.pdf";
+const ResumePT = "/images/resume_pt.pdf";
+
 import { About } from "../styles/about";
 import { enUS, ptBR } from "@/components/helper/internationalization";
 import Head from "@/components/helper/head";
@@ -52,13 +54,16 @@ const AboutPage = () => {
         <center>
           <h3>
             {translate.aboutPage.resume} (
-            <a href={Resume} download="resume_guilherme.pdf">
+            <a
+              href={locale == "pt-BR" ? ResumePT : Resume}
+              download="resume_guilherme.pdf"
+            >
               Download
             </a>
             )
           </h3>
           <br />
-          <SinglePage pdf={Resume} />
+          <SinglePage pdf={locale == "pt-BR" ? ResumePT : Resume} />
         </center>
       </About>
     </>
